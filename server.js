@@ -46,6 +46,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/test", require("./routes/test"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
+app.use("/message", require("./routes/message"));
 
 app.use(verifyJWT);
 app.use("/verify", require("./routes/api/verification"));
