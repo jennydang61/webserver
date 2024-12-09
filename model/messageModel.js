@@ -49,6 +49,8 @@ module.exports = class Message {
   }
 
   static async getChat(user1_ID, user2_ID) {
+    /* test 
+    http://localhost:3500/message/chat?user1_ID=93&user2_ID=94 */
     try {
       return await db.execute(getChatQuery, [user1_ID, user2_ID, user2_ID, user1_ID]);
     } catch (error) {
@@ -56,3 +58,12 @@ module.exports = class Message {
     }
   }
 };
+
+/*
+localhost:3500/message/sendMessage
+{
+  "receiver_ID": 93, 
+  "sender_ID": 94,  
+  "content": "hello"
+}
+*/
