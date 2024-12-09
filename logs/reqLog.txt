@@ -1237,3 +1237,14 @@
 20241208	17:56:20	9c2f4525-b396-4a16-afcc-93beb1f38749	GET	http://localhost:3000	/verify
 20241208	17:56:21	e9fdae15-75be-4921-afec-610e66ea63dd	PUT	http://localhost:3000	/verify
 20241208	17:56:22	0c9112c5-dafa-47fe-835e-e1f71395093c	GET	http://localhost:3000	/verify
+20241208	18:52:41	0a02d65c-dd29-4560-890a-3f701a8deec3	POST	undefined	/request/send
+20241208	18:54:01	a0a81ebc-062c-4664-843e-42bc8d404240	POST	undefined	/request/accept
+20241208	18:54:15	4539f760-7064-4b59-bd5b-0e3871ed6971	POST	undefined	/request/accept
+20241208	18:54:43	c378d855-a4a0-4525-be6d-3d23d0aaad78	GET	undefined	/request/status?receiver_ID=94&sender_ID=93
+20241208	18:54:49	a65784af-3ca3-47e5-8316-7b4b06076978	GET	undefined	/request/status?receiver_ID=93&sender_ID=94
+20241208	18:56:16	05781c21-7cbb-4760-aa16-57f201023e3c	POST	undefined	/message/sendMessage
+20241208	18:56:57	053bcc3f-d71e-4c79-afbb-9f11181eeafa	GET	undefined	/message/chat?receiver_ID=93&sender_ID=94
+20241208	18:57:07	51d92336-641e-42a8-8bb5-e656b1e58f04	GET	undefined	/message/chat?user_ID=93&user_ID=94
+20241208	18:57:50	9a22fe7c-3f09-4af9-ad9d-90db9a08902a	GET	undefined	/message/chat?user1_ID=93&user2_ID=94
+20241208	18:58:52	ee93a21c-54ea-42de-9ec5-7cf9eb5ccd46	POST	undefined	/message/chat
+20241208	18:58:55	f4e19f55-1e28-40ce-b386-edb8e12dbf79	POST	undefined	/message/chat
