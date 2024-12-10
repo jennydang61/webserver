@@ -1,12 +1,11 @@
-const db = require("../config/dbConn"); // Use the correct database connection
+const db = require("../config/dbConn");
 
 const add = (reviewer_ID, reviewed_ID, rate, comment) => {
     const query = `
         INSERT INTO Review (reviewer_ID, reviewed_ID, rate, date_added, comment)
         VALUES (?, ?, ?, CURRENT_DATE, ?);
     `;
-    console.log("Executing Query:", query);
-    return db.promise().execute(query, [reviewer_ID, reviewed_ID, rate, comment]);
+    return db.execute(query, [reviewer_ID, reviewed_ID, rate, comment]);
 };
 
 const getAll = (user_ID) => {
