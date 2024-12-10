@@ -45,17 +45,29 @@ const createNewProfile = async (req, res) => {
 
 const getProfiles = async (req, res) => {
   try {
+    // console.log("reach 3"); // devel
     const [profiles] = await Profile.fetchAll();
     const user_ID = req.user_ID;
     if (!profiles)
       return res
         .status(204)
         .json({ message: "No profiles found - profileController" });
-    // console.log(profiles);
+    console.log("Profiles: ", profiles); // devel
     res.json({ profiles, user_ID });
   } catch (err) {
     console.log(err);
   }
 };
 
-module.exports = { createNewProfile, getProfiles };
+const getOne = async (req, res) => {
+  try {
+    const [[profile]] = await Profile.fetch(req.user_ID);
+    console.log("ID:", req.user_ID);
+    console.log("Profile:", profile);
+    res.json(profile);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = { createNewProfile, getProfiles, getOne };

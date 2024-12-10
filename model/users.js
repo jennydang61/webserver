@@ -27,10 +27,16 @@ module.exports = class User {
     const [row] = await db.execute("SELECT LAST_INSERT_ID()");
     const student_id = row[0]["LAST_INSERT_ID()"];
     // console.log(student_id);
-
-    // Insert Status
     var datetime = new Date();
     const datetime_str = datetime.toISOString().slice(0, 10);
+
+    // Insert Student
+    await db.execute(
+      "INSERT INTO Student( user_ID, date_register) VALUES (?, ?)",
+      [student_id, datetime_str]
+    );
+
+    // Insert Status
     const desc = "desc..."; // can't remember what we were gonna store in description of the status...
     const context = "Verification";
     const status_name = "Pending";

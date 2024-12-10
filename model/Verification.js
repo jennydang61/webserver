@@ -11,6 +11,18 @@ module.exports = class Verification {
     );
   }
 
+  static async check(user_ID) {
+    return await db.execute(
+      `SELECT Status.status_name
+      FROM User
+      JOIN Verification ON User.user_ID = Verification.student_ID
+      JOIN Status ON Verification.status_ID = Status.status_ID
+      WHERE User.user_ID = ?;
+      `,
+      [user_ID]
+    );
+  }
+
   static async updateVerification(admin_ID, student_ID, status_name) {
     var datetime = new Date();
     const datetime_str = datetime.toISOString().slice(0, 10);

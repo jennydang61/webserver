@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const verifyJWT = require("./middleware/verifyJWT");
 const credentials = require("./middleware/credentials");
 const mysql = require("mysql2");
+
 // const { createServer } = require("http");
 // const { Server } = require("socket.io");
 
@@ -40,12 +41,13 @@ app.use("/subdir", express.static(path.join(__dirname, "/public")));
 
 // Routes
 app.use("/", require("./routes/root"));
-app.use("/subdir", require("./routes/subdir"));
+// app.use("/subdir", require("./routes/subdir"));
 app.use("/register", require("./routes/register"));
 app.use("/auth", require("./routes/auth"));
 app.use("/test", require("./routes/test"));
 app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
+app.use("/review", require("./routes/review"));
 app.use("/message", require("./routes/message"));
 app.use("/request", require("./routes/request"));
 

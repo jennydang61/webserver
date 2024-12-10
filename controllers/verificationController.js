@@ -18,6 +18,16 @@ const getUnverifiedRequests = async (req, res) => {
 };
 //test
 
+const checkStatus = async (req, res) => {
+  try {
+    const [[status]] = await Verification.check(req.user_ID);
+    console.log("status: ", status.status_name);
+    res.json(status.status_name);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const updateVerificationStatus = async (req, res) => {
   const { student_ID, status_name } = req.body;
   console.log(`student_ID: ${student_ID}, status_name: ${status_name}`); // devel
@@ -42,4 +52,8 @@ const updateVerificationStatus = async (req, res) => {
   }
 };
 
-module.exports = { getUnverifiedRequests, updateVerificationStatus };
+module.exports = {
+  getUnverifiedRequests,
+  updateVerificationStatus,
+  checkStatus,
+};

@@ -45,6 +45,29 @@ module.exports = class Profile {
     return await db.execute(getQuery, []);
   }
 
+  static async fetch(user_ID) {
+    const result = await db.execute(
+      `
+      SELECT U.user_ID, U.name, U.email, P.profile_ID, P.description, RR.range, CL.clean_level, RC.room_amount, LC.quadrant, NT.tolerance_level, SH.habits, SS.sleep_type
+      FROM User AS U
+      JOIN Profile AS P on U.User_ID = P.user_ID
+      JOIN Preference AS Pref ON Pref.profile_ID = P.profile_ID
+      NATURAL JOIN RentRange AS RR
+      NATURAL JOIN Cleanliness AS CL
+      NATURAL JOIN RoomCapacity AS RC
+      NATURAL JOIN Location AS LC
+      NATURAL JOIN NoiseTolerance AS NT
+      NATURAL JOIN SocialHabits AS SH
+      NATURAL JOIN SleepSchedule AS SS
+      WHERE U.user_ID = ?;
+      `,
+      [user_ID]
+    );
+
+    console.log(result);
+    return result;
+  }
+
   static async add(
     // profile_ID,
     user_ID,
