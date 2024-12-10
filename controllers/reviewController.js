@@ -1,4 +1,4 @@
-const Review = require("../model/review"); // Assuming a Review model exists
+const Review = require("../model/Review"); // Assuming a Review model exists
 
 const addReview = async (req, res) => {
     const { reviewer_ID, reviewed_ID, rate, comment } = req.body;
