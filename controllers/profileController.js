@@ -43,4 +43,19 @@ const createNewProfile = async (req, res) => {
   }
 };
 
-module.exports = { createNewProfile };
+const getProfiles = async (req, res) => {
+  try {
+    const [profiles] = await Profile.fetchAll();
+    const user_ID = req.user_ID;
+    if (!profiles)
+      return res
+        .status(204)
+        .json({ message: "No profiles found - profileController" });
+    // console.log(profiles);
+    res.json({ profiles, user_ID });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = { createNewProfile, getProfiles };
