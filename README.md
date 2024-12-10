@@ -50,7 +50,7 @@ roommate-finder-backend/
 ├── config/         # Configuration files (e.g., database connection)
 ├── middleware/     # Custom middleware for validation and security
 ├── utils/          # Utility functions for reusable logic
-├── server.js          # Entry point of the application
+├── server.js       # Entry point of the application
 ├── package.json    # Dependencies and scripts
 └── README.md       # Documentation
 ```
