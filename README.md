@@ -42,6 +42,7 @@ This structure simplifies debugging, testing, and onboarding new developers whil
 
 ### Project Structure
 
+```
 roommate-finder-backend/
 ├── controllers/    # Contains logic for handling API requests
 ├── models/         # Defines the database schema and interacts with MySQL
@@ -52,7 +53,7 @@ roommate-finder-backend/
 ├── server.js          # Entry point of the application
 ├── package.json    # Dependencies and scripts
 └── README.md       # Documentation
-
+```
 
 License
 
